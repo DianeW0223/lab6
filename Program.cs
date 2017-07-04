@@ -14,17 +14,20 @@ namespace Lab_6
             bool run = true;
             Console.WriteLine("Welcome to the Pig Latin Translator!");
 
+            // This will run as long as you are continuing.
             while (run == true)
             {
                 Console.WriteLine("Enter a word to be translated");
                 string input1 = Console.ReadLine();
+                //This triggers the getWord method and translates it to lowercase.
                 string newInput = getWord(input1.ToLower());
+                // This gives your final output.
                 Console.WriteLine("Your Pig Latin Word is " + newInput);
                 run = Continue();
             }
    
         }
-
+        // This method checks for if the word starts with a vowel and if it doesn't it will trigger the getConsonant method.
         public static string getWord(string x)
         {
 
@@ -42,7 +45,7 @@ namespace Lab_6
             }
         }
               
-              
+              //This is the getConsonant method that will run until the word starts with a vowel.
         public static string getConsonant(string y)
         {
             string sub = y.Substring(1);
@@ -52,6 +55,7 @@ namespace Lab_6
             return input;
         }
 
+        //This is the continue method that will run at the end of translating each word.
         public static Boolean Continue()
         {
             Boolean run;
